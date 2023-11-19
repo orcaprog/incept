@@ -1,0 +1,2 @@
+service mysql start
+mysql -u root -e "CREATE DATABASE abouassiDB; CREATE USER 'abouassi'@localhost IDENTIFIED BY '1234';GRANT ALL PRIVILEGES ON abouassiDB.* TO 'abouassi'@localhost;FLUSH PRIVILEGES; exec $@" 
