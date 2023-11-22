@@ -1,4 +1,5 @@
 nginx : 
+	sudo docker rmi -f my_nginx
 	sudo docker build srcs/requirements/nginx -t my_nginx 
 
 mariadb :
