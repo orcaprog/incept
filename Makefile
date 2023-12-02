@@ -12,16 +12,20 @@ down :
 
 nginx : 
 	sudo docker rmi -f my_nginx
+	sudo docker rm -f nginx
 	sudo docker build srcs/requirements/nginx -t my_nginx 
 	
-	 sudo docker container run -d -it --network=my_network -p "443:443" --name nginx-con my_nginx
+	 sudo docker container run -d -it --network=inception -p "443:443" --name nginx -v wordpress:/var/www/wordpress my_nginx
 mariadb :
 	sudo docker rmi -f my_mariadb
+	sudo docker rm -f mariadb
 
 	sudo docker build srcs/requirements/mariadb -t my_mariadb
-	sudo docker container run -d -it --name mariadb-con my_mariadb
+	sudo docker container run -d -it  --network=inception --name mariadb  my_mariadb
 	
 wordpress :
 	sudo docker rmi -f my_wordpress
+	sudo docker rm -f wordpress
 	sudo docker build srcs/requirements/wordpress -t my_wordpress
-	 sudo docker container run -d -it  --name wordpress-con -v /home/abouassi/Desktop/incept/srcs/requirements/nginx/tools:/var/www/wordpress my_wordpress
+	 sudo docker container run -d -it --network=inception --name wordpress -v wordpress:/var/www/wordpress my_wordpress
+re	: down all
