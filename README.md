@@ -9,4 +9,5 @@ php-fpm7.3 -F
 
 
   sudo find / -name wordpress
+  ps axfo pid,ppid,command
 
