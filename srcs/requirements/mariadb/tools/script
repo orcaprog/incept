@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # Start the MySQL service
+# systemctl restart mysql
 service mariadb start
 sleep 2
 mysql -u root -p${SQL_ROOT_PASSWORD} -e "CREATE DATABASE IF NOT EXISTS \`${SQL_DATABASE}\`; 
