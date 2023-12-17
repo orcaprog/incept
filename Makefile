@@ -14,7 +14,7 @@ nginx :
 	sudo docker rm -f nginx
 	sudo docker build srcs/requirements/nginx -t my_nginx 
 	
-	 sudo docker container run -d -it --network=inception -p "443:443" --name nginx -v wordpress:/var/www/wordpress my_nginx
+	 sudo docker container run  -it --network=inception -p "443:443" --name nginx -v wordpress:/var/www/wordpress my_nginx /bin/bash
 mariadb :
 	sudo docker rmi -f my_mariadb
 	sudo docker rm -f mariadb
@@ -26,5 +26,5 @@ wordpress :
 	sudo docker rmi -f my_wordpress
 	sudo docker rm -f wordpress
 	sudo docker build srcs/requirements/wordpress -t my_wordpress
-	 sudo docker container run -d -it --network=inception --name wordpress -v wordpress:/var/www/wordpress my_wordpress
+	 sudo docker container run -d -it --network=inception --name wordpress -v /var/www/wordpress my_wordpress
 re	: down all

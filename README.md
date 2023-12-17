@@ -16,8 +16,9 @@ docker stop $(docker ps -qa) &&  docker rm $(docker ps -qa)  &&  docker rmi -f $
 for ports:
 ss -tulpn
 
+htop dayal : show proccess
 
-
+build context : blasa likaykon fiha dockerfile limnha kan kndir build
 
 ENV    DOMAIN_NAME=abouassi.42.fr
 
