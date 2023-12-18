@@ -1,5 +1,5 @@
 #!/bin/sh
-
+sed -i '/^bind-address/s/^/#/' /etc/mysql/mariadb.conf.d/50-server.cnf
 service mariadb start
 sleep 2
 
