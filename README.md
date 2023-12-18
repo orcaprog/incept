@@ -15,7 +15,7 @@ docker stop $(docker ps -qa) &&  docker rm $(docker ps -qa)  &&  docker rmi -f $
 
 for ports:
 ss -tulpn
-
+sudo apt-get install net-tools
 htop dayal : show proccess
 
 build context : blasa likaykon fiha dockerfile limnha kan kndir build

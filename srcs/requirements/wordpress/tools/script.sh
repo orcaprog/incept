@@ -1,7 +1,5 @@
 #!bin/sh
-sed -i 's|listen = /run/php/php7.3-fpm.sock|listen = wordpress:9000|' etc/php/7.3/fpm/pool.d/www.conf
-
-
+sed -i 's|listen = /run/php/php7.4-fpm.sock|listen = wordpress:9000|' etc/php/7.4/fpm/pool.d/www.conf
 
 cd /var/www/wordpress
 
@@ -26,4 +24,4 @@ else
     wp user create $U_WP_USER $U_WP_EMAIL --role=${U_WP_ROLE} --user_pass=${U_WP_PW} --allow-root
 fi
 
-php-fpm7.3 -F
+exec php-fpm7.4 -F

@@ -1,8 +1,8 @@
-FROM debian:buster
+FROM debian:11
 
 RUN apt-get update -y &&  apt-get install  wget -y
 
-RUN apt-get update -y && apt-get install -y php7.3 php7.3-fpm  php7.3-mysql  mariadb-client 
+RUN apt-get update -y && apt-get install -y php7.4 php7.4-fpm  php7.4-mysql  mariadb-client 
 
 RUN wget https://fr.wordpress.org/wordpress-6.0-fr_FR.tar.gz -P /var/www
 
