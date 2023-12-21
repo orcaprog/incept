@@ -35,3 +35,43 @@ ENV U_WP_USER=legend
 ENV U_WP_EMAIL=browserayoub@gmail.com
 ENV U_WP_ROLE=editor
 ENV U_WP_PW=1234
+
+
+
+
+
+
+
+
+
+wp-config-sample.php
+wp-config.php
+wp-content
+wp-cron.php
+wp-includes
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
+
+
+
+
+
+
+wp-config-sample.php
+wp-content
+wp-cron.php
+wp-includes
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
