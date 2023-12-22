@@ -14,7 +14,6 @@ RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.ph
 
 COPY ./tools/script.sh /script.sh
 RUN chmod +x script.sh
-# COPY ./conf/www.conf etc/php/7.3/fpm/pool.d/www.conf
 EXPOSE 9000
 RUN mkdir /run/php/
 RUN chmod +x wp-cli.phar

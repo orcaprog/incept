@@ -37,41 +37,21 @@ ENV U_WP_ROLE=editor
 ENV U_WP_PW=1234
 
 
+nginx : 
+	sudo docker rmi -f my_nginx
+	sudo docker rm -f nginx
+	sudo docker build srcs/requirements/nginx -t my_nginx 
+	
+	 sudo docker container run  -it --network=inception -p "443:443" --name nginx -v wordpress:/var/www/wordpress my_nginx 
+mariadb :
+	sudo docker rmi -f my_mariadb
+	sudo docker rm -f mariadb
 
-
-
-
-
-
-
-wp-config-sample.php
-wp-config.php
-wp-content
-wp-cron.php
-wp-includes
-wp-links-opml.php
-wp-load.php
-wp-login.php
-wp-mail.php
-wp-settings.php
-wp-signup.php
-wp-trackback.php
-xmlrpc.php
-
-
-
-
-
-
-wp-config-sample.php
-wp-content
-wp-cron.php
-wp-includes
-wp-links-opml.php
-wp-load.php
-wp-login.php
-wp-mail.php
-wp-settings.php
-wp-signup.php
-wp-trackback.php
-xmlrpc.php
+	sudo docker build srcs/requirements/mariadb -t my_mariadb
+	sudo docker container run -d -it  --network=inception --name mariadb  my_mariadb
+	
+wordpress :
+	sudo docker rmi -f my_wordpress
+	sudo docker rm -f wordpress
+	sudo docker build srcs/requirements/wordpress -t my_wordpress
+	 sudo docker container run -d -it --network=inception --name wordpress -v /var/www/wordpress my_wordpress
